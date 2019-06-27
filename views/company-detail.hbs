@@ -1,0 +1,16 @@
+<h1>Company Detail</h1>
+
+<strong>Name</strong>: {{company.name}} <br>
+<strong>Crunchbase Url</strong>: <a href="{{company.crunchbase_url}}">{{company.crunchbase_url}}</a><br>
+<strong>Number of employees</strong>: {{company.number_of_employees}} <br>
+<strong>Acquistions:</strong>
+<ul>
+  {{#each company.acquisitions}}
+  <li>
+    {{this.company.name}}
+    {{#if this.price_amount}}
+    - {{this.price_amount}} {{this.price_currency_code}}
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>
